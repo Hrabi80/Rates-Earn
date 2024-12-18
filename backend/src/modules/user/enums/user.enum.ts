@@ -1,0 +1,6 @@
+export enum UserRoles {
+  JOB_SEEKER = 'JOB_SEEKER',
+  RECRUITER = 'RECRUITER',
+  MODERATOR = 'MODERATOR',
+  ADMIN = 'ADMIN'
+}
