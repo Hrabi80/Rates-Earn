@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button } from '@/ui/Button';
+import '../../app/globals.css';
 
 const HeroSection: React.FC = () => {
   return (
