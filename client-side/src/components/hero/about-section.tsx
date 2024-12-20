@@ -1,30 +1,135 @@
 'use client';
 
 import React from 'react';
+import { Button } from "@/components/ui/button";
 
+const integrations = [
+  [
+    {
+      id: "integration-1",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-1.svg" />,
+    },
+    {
+      id: "integration-2",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-2.svg" />,
+    },
+    {
+      id: "integration-3",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-3.svg" />,
+    },
+    {
+      id: "integration-4",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-4.svg" />,
+    },
+    {
+      id: "integration-5",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-5.svg" />,
+    },
+  ],
+  [
+    {
+      id: "integration-6",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-6.svg" />,
+    },
+    {
+      id: "integration-7",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-1.svg" />,
+    },
+    {
+      id: "integration-8",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-2.svg" />,
+    },
+    {
+      id: "integration-9",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-3.svg" />,
+    },
+    {
+      id: "integration-10",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-4.svg" />,
+    },
+  ],
+  [
+    {
+      id: "integration-11",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-5.svg" />,
+    },
+    {
+      id: "integration-12",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-6.svg" />,
+    },
+    {
+      id: "integration-13",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-1.svg" />,
+    },
+    {
+      id: "integration-14",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-2.svg" />,
+    },
+    {
+      id: "integration-15",
+      icon: <img alt="Integration" src="https://shadcnblocks.com/images/block/block-3.svg" />,
+    },
+  ],
+];
 const AboutUs: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          About <span className="text-green-500">Us</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-  <img className="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains"/>
-  <div className="px-6 py-4">
-    <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
-    <p className="text-gray-700 text-base">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-    </p>
-  </div>
-  <div className="px-6 pt-4 pb-2">
-    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-  </div>
-</div>
-          
+    <section className="container mx-auto relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1400 600"
+          className="min-h-full min-w-full"
+        >
+          <defs>
+            <pattern
+              id="grid"
+              width="24"
+              height="24"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 24 0 L 0 0 0 24"
+                fill="none"
+                stroke="hsl(var(--muted))"
+                strokeWidth="1"
+                strokeOpacity={0.5}
+              />
+            </pattern>
+          </defs>
+          <rect width="1400" height="600" fill="url(#grid)" />
+        </svg>
+      </div>
+      <div className="relative">
+        <div className="absolute left-0 z-10 hidden h-full w-1/2 bg-[linear-gradient(to_right,hsl(var(--background))_85%,transparent_100%)] md:block"></div>
+        <div className="md:-space-x-26 container relative flex flex-col items-start md:flex-row md:items-center">
+          <div className="z-20 -mx-[calc(theme(container.padding))] w-[calc(100%+2*theme(container.padding))] shrink-0 bg-background px-[calc(theme(container.padding))] pt-32 md:w-1/2 md:bg-transparent md:pb-32">
+            <div className="flex flex-col items-start text-left">
+              <div className="max-w-sm">
+                <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
+                  Welcome to Our Website
+                </h1>
+                <Button>Primary</Button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="flex flex-col gap-16 pb-8 pt-12 md:py-32">
+              {integrations.map((line, i) => (
+                <div key={i} className="flex gap-x-24 odd:-translate-x-24">
+                  {line.map((integration) => (
+                    <div
+                      key={integration.id}
+                      className="size-24 rounded-xl border border-background bg-background shadow-xl"
+                    >
+                      <div className="h-full w-full bg-muted/20 p-4">
+                        {integration.icon}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
